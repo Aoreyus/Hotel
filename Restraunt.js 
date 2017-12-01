@@ -1,0 +1,24 @@
+var kimchee ={
+  "name":"Kim chee",
+  "prodate": "1292107",
+  "cost":5
+}
+
+function buyKimchee(){
+  var qty= document.getElementById('qty').value;
+  var price=qty*kimchee.cost;
+  document.getElementById('confirm').innerHTML="kimchee.name";
+  localStorage.setItem('firstFood',kimchee.name);
+  localStorage.setItem('subtotal',price);
+  location.href="page2.html"
+  
+}
+//page two
+
+function payUp(){
+  var subtotal=localStorage.getItem('subtotal');
+  var tax=1.0732;
+  var grandTotal= subtotal*tax;
+  grandTotal.toFixed(2);
+  document.getElementById('receipt').innerHTML= "Pay Me"+ grandtotal;
+}
